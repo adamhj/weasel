@@ -9,6 +9,7 @@ if exist env.bat call env.bat
 if not defined WEASEL_VERSION set WEASEL_VERSION=0.14.3
 if not defined WEASEL_BUILD set WEASEL_BUILD=0
 if not defined WEASEL_ROOT set WEASEL_ROOT=%CD%
+if not defined LIBRIME_ROOT set LIBRIME_ROOT=%WEASEL_ROOT%\librime
 
 echo WEASEL_VERSION=%WEASEL_VERSION%
 echo WEASEL_BUILD=%WEASEL_BUILD%
@@ -104,27 +105,23 @@ if %build_boost% == 1 (
 )
 
 if %build_rime% == 1 (
-  if not exist librime\build.bat (
-    git submodule update --init --recursive
-  )
-
-  cd %WEASEL_ROOT%\librime
+  cd %LIBRIME_ROOT%
   if not exist env.bat (
     copy %WEASEL_ROOT%\env.bat env.bat
   )
-  if not exist thirdparty\lib\opencc.lib (
-    call build.bat thirdparty %rime_build_variant%
+  if not exist lib\opencc.lib (
+    call build.bat deps %rime_build_variant%
     if errorlevel 1 goto error
   )
   call build.bat %rime_build_variant%
   if errorlevel 1 goto error
 
 cd %WEASEL_ROOT%
-  copy /Y librime\dist\include\rime_*.h include\
+  copy /Y %LIBRIME_ROOT%\dist\include\rime_*.h include\
   if errorlevel 1 goto error
-  copy /Y librime\dist\lib\rime.lib lib\
+  copy /Y %LIBRIME_ROOT%\dist\lib\rime.lib lib\
   if errorlevel 1 goto error
-  copy /Y librime\dist\lib\rime.dll output\
+  copy /Y %LIBRIME_ROOT%\dist\lib\rime.dll output\
   if errorlevel 1 goto error
 )
 
@@ -227,14 +224,14 @@ if errorlevel 1 goto error
 exit /b
 
 :build_opencc_data
-if not exist %WEASEL_ROOT%\librime\thirdparty\share\opencc\TSCharacters.ocd (
-  cd %WEASEL_ROOT%\librime
-  call build.bat thirdparty %rime_build_variant%
+if not exist %LIBRIME_ROOT%\share\opencc\TSCharacters.ocd2 (
+  cd %LIBRIME_ROOT%
+  call build.bat deps %rime_build_variant%
   if errorlevel 1 goto error
 )
 cd %WEASEL_ROOT%
 if not exist output\data\opencc mkdir output\data\opencc
-copy %WEASEL_ROOT%\librime\thirdparty\share\opencc\*.* output\data\opencc\
+copy %LIBRIME_ROOT%\share\opencc\*.* output\data\opencc\
 if errorlevel 1 goto error
 exit /b
 
