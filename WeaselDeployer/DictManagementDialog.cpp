@@ -120,7 +120,7 @@ LRESULT DictManagementDialog::OnExport(WORD, WORD code, HWND, BOOL&) {
 			MessageBox(L"咦，导出的文件找不着了。", L":-(", MB_OK | MB_ICONERROR);
 		}
 		else {
-			std::wstring report(L"导出了" + std::to_wstring(result) + L" 条记录。");
+			std::wstring report(L"导出了 " + std::to_wstring(result) + L" 条记录。");
 			MessageBox(report.c_str(), L":-)", MB_OK | MB_ICONINFORMATION);
 			std::wstring param = L"/select, \"" + std::wstring(dlg.m_szFileName) + L"\"";
 			ShellExecute(NULL, L"open", L"explorer.exe", param.c_str(), NULL, SW_SHOWNORMAL);
