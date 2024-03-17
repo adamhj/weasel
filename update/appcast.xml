@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
 <channel>
-    <title>【小狼毫】輸入法更新頻道</title>
+    <title>【小狼毫】输入法更新频道</title>
     <link>http://rime.github.io/release/weasel/appcast.xml</link>
-    <description>小狼毫 Appcast 更新頻道</description>
+    <description>小狼毫 Appcast 更新频道</description>
     <language>zh</language>
     <item>
       <title>小狼毫 0.14.3</title>
