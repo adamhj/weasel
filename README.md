@@ -5,9 +5,12 @@
 ### Release-20241207
 
 小狼毫0.14.3.0 (兼容Windows 7)
- librime-1.11.2
- 界面简体化
- 包含以下插件：
+
+librime-1.11.2
+
+界面简体化
+
+包含以下插件：
 
 - librime-charcode
 - librime-lua
@@ -16,7 +19,6 @@
   - https://github.com/lotem/rime-octagram-data-s1
 - librime-predict 数据文件需要另外下载：
   - https://github.com/rime/librime-predict/releases
-
 
 ---
 
