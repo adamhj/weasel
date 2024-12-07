@@ -1,13 +1,31 @@
-﻿【小狼毫】輸入法
+﻿- 此分支用来与发布版本进行对应
+
+---
+
+### Release-20241207
+
+小狼毫0.14.3.0 (兼容Windows 7)
+ librime-1.11.2
+ 界面简体化
+ 包含以下插件：
+
+- librime-charcode
+- librime-lua
+- librime-octagram 数据文件需要另外下载：
+  - https://github.com/lotem/rime-octagram-data
+  - https://github.com/lotem/rime-octagram-data-s1
+- librime-predict 数据文件需要另外下载：
+  - https://github.com/rime/librime-predict/releases
+
+
+---
+
+【小狼毫】輸入法
 ================
 
 基於 中州韻輸入法引擎／Rime Input Method Engine 等開源技術
 
 式恕堂 版權所無
-
-[![Download](https://img.shields.io/github/v/release/rime/weasel)](https://github.com/rime/weasel/releases/latest)
-[![Build status](https://ci.appveyor.com/api/projects/status/github/rime/weasel?svg=true)](https://ci.appveyor.com/project/rime/weasel)
-[![GitHub Tag](https://img.shields.io/github/tag/rime/weasel.svg)](https://github.com/rime/weasel)
 
 授權條款：GPLv3
 
